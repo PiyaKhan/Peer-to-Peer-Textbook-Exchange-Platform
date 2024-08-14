@@ -1,0 +1,791 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d8d0aa;
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    /* Adjust the height as needed */
+}
+
+nav {
+    background-color: #884040;
+    color: #fff;
+    padding: 15px;
+    position: sticky;
+    /* top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease; */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+nav ul li:hover {
+    transform: scale(1.05);
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 10px;
+    font-size: 80px;
+}
+
+nav ul li.nav-right {
+    margin-left: auto;
+}
+
+/* Banner/Header */
+header.banner {
+    background: url('images/banner.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    height: 70vh;
+    transition: background-color 0.3s ease;
+}
+
+header.banner h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+header.banner p {
+    font-size: 1.3em;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+header.banner span {
+    color: white;
+    font-size: 3rem;
+}
+
+/* Section */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    /* background-color: #fff; */
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+/* About Us */
+.about-us .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    overflow: hidden;
+}
+
+.about-us .about-image {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+    transition: translatex(-100%);
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* .about-us .about-image:hover {
+    transform: scale(1.05);
+} */
+
+.about-us .about-text {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    transform: translateX(100%);
+    opacity: 0;
+    /* Start invisible */
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+.about-us .about-text h2 {
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.about-us .about-text p {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 30px;
+}
+
+.about-us .scroll-in-left {
+    transform: translateX(0);
+    /* Move into view */
+    opacity: 1;
+    /* Make visible */
+}
+
+.about-us .scroll-in-right {
+    transform: translateX(0);
+    /* Move into view */
+    opacity: 1;
+    /* Make visible */
+}
+
+
+/* Apply animation on scroll */
+.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Services Section */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.service {
+    background-image: url('images/vintagee.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    max-width: 300px;
+    max-height: 300px;
+    margin: 20px;
+    padding: 40px;
+    color: #070707;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    opacity: 0;
+    /* Start invisible */
+    transform: translateY(50px);
+    /* Start slightly below */
+    animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.service:hover {
+    transform: translateY(-10px) scale(1.05);
+    /* Lift and slightly enlarge on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    /* Enhance the shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service h3 {
+    width: auto;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.service p {
+    margin: 10px 20px;
+}
+
+/* Forms */
+form {
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea {
+    width: 80%;
+    padding: 10px;
+    margin-left: 50px;
+    border: 1px solid #181717;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus,
+textarea:focus {
+    border-color: #87484f;
+}
+
+button {
+    /* width: 80%; */
+    background: #571f24;
+    border: none;
+    color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #954325;
+}
+
+/* Buttons */
+.btn.btn-primary {
+    display: inline-block;
+    text-decoration: none;
+    color: #f7f7f7;
+    padding: 10px 20px;
+    background-color: #7e2626;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+
+.btn.btn-primary:hover {
+    background-color: #883621;
+}
+
+
+/* List Books Page */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    transition: opacity 0.3s ease;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+table th,
+table td {
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+}
+
+/* Contact Us */
+.contact-us p {
+    margin: 0;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+/* Image responsiveness */
+/* img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+} */
+
+/* img:hover {
+    transform: scale(1.05);
+} */
+
+/* Basic Reset */
+body,
+h2,
+form,
+input,
+button,
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*--------- login page design------ */
+/* Container Style */
+.container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* text-align: center; */
+    margin-top: 120px;
+}
+
+/* Heading Style */
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Login Form Style */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form label {
+    font-size: 14px;
+    color: #100f0f;
+    margin-bottom: 5px;
+    width: 90%;
+    text-align: left;
+
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"],
+.login-form input[type="email"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #3f3333;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.login-form button {
+    width: 20%;
+    background-color: #651a1a;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #582f2f;
+}
+
+
+
+/* Chat Container */
+.chat-container {
+    display: flex;
+    height: 90vh;
+    transition: background-color 0.3s ease;
+}
+
+.contact-list {
+    width: 30%;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    height: 100%;
+}
+
+.chat-box {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    background-color: #e5ddd5;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+
+#message-input {
+    flex: 1;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+/* Chat messages container */
+.messages {
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Individual message container */
+.message {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 60%;
+    padding: 10px 15px;
+    border-radius: 20px;
+    position: relative;
+    word-wrap: break-word;
+    transition: background-color 0.3s ease;
+}
+
+/* Sent messages */
+.message.sent {
+    align-self: flex-end;
+    background-color: #3498db;
+    color: #fff;
+    border-radius: 20px 20px 0 20px;
+    text-align: right;
+}
+
+/* Received messages */
+.message.received {
+    align-self: flex-start;
+    background-color: #ecf0f1;
+    border: 1px solid #bdc3c7;
+    border-radius: 20px 20px 20px 0;
+    text-align: left;
+}
+
+/* Message text */
+.message p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Send Box */
+.chat-box .send-box {
+    display: flex;
+    margin-top: 20px;
+}
+
+.send-box button {
+    width: 10%;
+    padding: 0;
+}
+
+.contact-list .name-search {
+    display: flex;
+    margin-right: 40px;
+}
+
+
+
+/* Footer styles */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.contact-us {
+    padding: 10px;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-image: url('images/contact1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Ensures the image covers the entire container */
+    background-position: center;
+    /* Centers the image */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.mb-3.form-label label {
+    text-align: left;
+}
+
+.contact-container .form-control {
+    /* margin-bottom: 15px; */
+    border: 1px solid #0c0c0c;
+    width: 90%;
+    margin: auto;
+}
+
+.contact-container .form-label {
+    text-align: left;
+}
+
+.contact-container .btn-primary {
+    background-color: #7e2424;
+    border: none;
+}
+
+
+/* Testimonials Section */
+.testimonials {
+    background-image: url('images/bookss.jpg');
+    background-size: cover;
+    /* Ensures the background image covers the section */
+    background-position: center;
+    /* Center the background image */
+    padding: 50px 20px;
+    text-align: center;
+    color: #fff;
+    /* Ensure text is readable against background */
+}
+
+.testimonials h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #fff;
+}
+
+/* Testimonial Container */
+.testimonial-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Individual Testimonial */
+.testimonial {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: calc(27.333% - 10px);
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+}
+
+.testimonial:hover {
+    transform: scale(1.05);
+}
+
+/* Testimonial Image */
+.testimonial img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Testimonial Text */
+.testimonial p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #0d0d0ded;
+}
+
+.testimonial h4 {
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .testimonial {
+        flex: 1 1 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* for books_details page */
+.book-showcase {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.book-list {
+    display: flex;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.book-item {
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.book-item img {
+    width: 70%;
+    height: 70%;
+    border-radius: 5px;
+}
+
+.book-item h5 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.book-item p {
+    font-size: 14px;
+    color: #777;
+}
+
+/*------- book-details page---- */
+.book-details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Book details container */
+.book-details-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+/* Book details header */
+.book-details-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Book details section */
+.book-details {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.book-image {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book-image img {
+    max-width: 100%;
+    /* max-height: 300px; */
+    /* Set a fixed height */
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
+}
+
+.details {
+    flex: 2;
+    padding: 0 20px;
+}
+
+.details h5 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+.details .price {
+    font-size: 1.2em;
+    color: #28a745;
+}
+
+/* Quantity input group */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-group button {
+    padding: 5px 15px;
+    font-size: 1.2em;
+}
+
+.input-group input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+}
+
+/* Buy Now button */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
